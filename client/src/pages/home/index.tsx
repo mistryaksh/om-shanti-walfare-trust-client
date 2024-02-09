@@ -1,7 +1,13 @@
 import React from 'react';
 
+import { Layout } from '../../layout';
+
 export const Home = () => {
     return (
-    <div className="text-xl text-primary">Home page</div>
+        <Layout>
+            <div>
+                <h1>Home</h1>
+            </div>
+        </Layout>
     )
 }
