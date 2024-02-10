@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
 
+import { HeaderTop } from './top';
+import { HeaderBottom } from './bottom';
+
 export const Header: FC = () => {
     return (
-        <header>
-            <div className="lg:block bg-white py-8 border-b border-gray-100">
-                Header
-            </div>
-        </header>
+        <section>
+            <HeaderTop />
+            <HeaderBottom />
+        </section>
     );
 }

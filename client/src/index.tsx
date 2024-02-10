@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-import { Default } from "./constants";
+import { COMMON } from "./constants";
 import App from "./App";
 
 
-const root = ReactDOM.createRoot(document.getElementById(Default.ROOT) as HTMLElement);
+const root = ReactDOM.createRoot(document.getElementById(COMMON.ROOT) as HTMLElement);
 root.render(
     <StrictMode>
         <App />
