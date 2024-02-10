@@ -2,6 +2,7 @@ import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
+import 'animate.css';
 
 import { COMMON } from "./constants";
 import App from "./App";

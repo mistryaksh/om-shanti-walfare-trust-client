@@ -9,9 +9,9 @@ export interface WrapperProps {
 
 export const Wrapper: FC<WrapperProps> = ({ children }) => {
     return (
-        <>
+        <div className="animate__animated animate__fadeIn">
             <ToastContainer autoClose={3000} />
             {children}
-        </>
+        </div>
     );
 };

@@ -6,4 +6,6 @@ export interface ButtonProps {
    type?: BUTTON_TYPES.BUTTON | BUTTON_TYPES.SUBMIT | BUTTON_TYPES.RESET;
    className?: string;
    value?: string;
+   transparent?: boolean;
+   styles?: string;
 }

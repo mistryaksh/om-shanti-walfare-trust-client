@@ -5,11 +5,11 @@ import { COMPONENT_STYLES } from '../../constants';
 
 const STYLES = COMPONENT_STYLES;
 
-export const Button: FC<ButtonProps> = ({ children, value, type, className, onClick }): JSX.Element  => {
+export const Button: FC<ButtonProps> = ({ children, value, type, className, onClick, transparent, styles }): JSX.Element  => {
    return (
       <button
          type={type}
-         className={className || STYLES.BUTTON}
+         className={(className || (!transparent ? STYLES.BUTTON : STYLES.BUTTON_TRANSPARENT)) + ' ' + styles}
          onClick={onClick}
       >
          {children || value}

@@ -37,7 +37,7 @@ export const HeaderTop: FC = (): JSX.Element => {
   ];
 
   return (
-    <header className="border-b border-slate-100 bg-white py-6 w-full">
+    <header className="border-b border-slate-100 bg-white py-5 w-full">
       <div className="container mx-auto w-full px-10">
         <div className="flex items-center justify-between max-w-full">
           <div className="flex items-center gap-x-5">

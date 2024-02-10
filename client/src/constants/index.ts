@@ -15,7 +15,7 @@ export enum LAYOUT_STYLES {
     TEXT = "inline-block text-slate-500 text-sm py-0 font-light border-r border-slate-500 pr-5 focus:outline-none active:outline-none",
     SOCIAL_ICON = "inline-block text-slate-500 text-lg py-0 font-light hover:text-emerald-500 hover:rotate-y-180 duration-200 ease-in-out focus:outline-none active:outline-none",
     BUTTON = "inline-block text-slate-500 text-sm py-0 font-light hover:text-emerald-500 duration-200 ease-in-out focus:outline-none active:outline-none",
-    LINK = 'text-md font-light text-slate-600 hover:text-emerald-500 duration-200 ease-in-out focus:outline-none active:outline-none',
+    LINK = 'text-md font-light hover:text-emerald-500 duration-200 ease-in-out focus:outline-none active:outline-none',
 }
 
 export enum ROUTES {
@@ -34,5 +34,6 @@ export enum BUTTON_TYPES {
 }
 
 export enum COMPONENT_STYLES {
-    BUTTON = 'bg-emerald-500 text-white px-12 py-5 text-md font-light focus:outline-none active:outline-none hover:bg-emerald-600 duration-200 ease-in-out',
-} 
+    BUTTON = 'bg-emerald-500 text-white px-12 py-5 text-md font-light tracking-wider focus:outline-none active:outline-none hover:bg-emerald-600 duration-300 ease-in-out',
+    BUTTON_TRANSPARENT = 'bg-transparent text-emerald-500 px-12 py-5 text-md font-light tracking-wider focus:outline-none active:outline-none',
+}
