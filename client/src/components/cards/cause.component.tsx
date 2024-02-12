@@ -13,13 +13,13 @@ export const CauseCard: FC<CauseCardProps> = ({ title, img, raised, goal, onClic
             <img src={img} alt="cause-image" className="w-full rounded-md-top" />
          </div>
          <div className={STYLES.BODY}>
-            <h3 className={STYLES.TITLE}>
+            <h3 className={STYLES.TITLE} onClick={onClick}>
                {title}
             </h3>
             <div className="mt-9 mb-5 w-full">
                <div className="flex justify-between mb-1">
                   <span className="text-xs tracking-wide font-light text-blue-950">Raised</span>
-                  <span className="text-sm font-medium text-emerald-500">{Math.round((raised / goal) * 100)}%</span>
+                  <span className="text-sm font-semibold text-emerald-500">{Math.round((raised / goal) * 100)}%</span>
                </div>
                   <div className="w-full bg-gray-100 rounded-full h-2.5">
                   <div className="bg-emerald-500 h-2.5 rounded-full" style={{ width: `${Math.round((raised / goal) * 100)}%` }}></div>
