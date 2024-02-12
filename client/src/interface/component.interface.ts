@@ -8,4 +8,15 @@ export interface ButtonProps {
    value?: string;
    transparent?: boolean;
    styles?: string;
-}
+};
+
+export interface CardProps {
+   title: string;
+   description: string;
+   icon: React.ReactNode | string;
+   children?: React.ReactNode;
+   onClick?: () => void;
+   className?: string;
+   styles?: string;
+   active?: boolean;
+};
