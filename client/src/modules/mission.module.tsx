@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoSettingsOutline } from "react-icons/io5";
 
-import { Card } from '../components';
+import { MissionCard as Card } from '../components';
 
 export const MissionModule = () => {
    const desc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
@@ -14,7 +14,7 @@ export const MissionModule = () => {
       </div>
       <div className="flex items-center gap-x-8">
          <Card title="Clean water" description={desc} icon={(<IoSettingsOutline />)} />
-         <Card title="Clean water" description={desc} icon={(<IoSettingsOutline />)} active />
+         <Card title="Clean water" description={desc} icon={(<IoSettingsOutline />)} />
          <Card title="Clean water" description={desc} icon={(<IoSettingsOutline />)} />
       </div>
    </div>

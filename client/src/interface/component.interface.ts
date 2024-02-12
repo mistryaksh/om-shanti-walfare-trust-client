@@ -10,13 +10,17 @@ export interface ButtonProps {
    styles?: string;
 };
 
-export interface CardProps {
+export interface MissionCardProps {
    title: string;
    description: string;
    icon: React.ReactNode | string;
-   children?: React.ReactNode;
    onClick?: () => void;
-   className?: string;
-   styles?: string;
-   active?: boolean;
+};
+
+export interface CauseCardProps {
+   title: string;
+   img: string;
+   raised: number;
+   goal: number;
+   onClick?: () => void;
 };

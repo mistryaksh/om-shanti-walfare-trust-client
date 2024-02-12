@@ -4,7 +4,7 @@ import { Button } from '../components';
 
 export const AboutModule: FC = () => {
    return (
-      <div className="bg-white px-72 py-52">
+      <div className="bg-white px-72 py-44">
          <div className="grid grid-cols-2">
             <div className="w-full">
                <p className="text-emerald-500 text-xl font-medium tracking-wider mb-6">
