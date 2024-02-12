@@ -6,7 +6,7 @@ export enum LAYOUT_STYLES {
 }
 
 export enum COMPONENT_STYLES {
-   BUTTON = 'bg-emerald-500 text-white px-12 py-5 text-md font-light tracking-wider focus:outline-none active:outline-none hover:bg-emerald-600 duration-300 ease-in-out',
+   BUTTON = 'bg-emerald-500 text-white px-10 py-5 text-md font-light tracking-wider focus:outline-none active:outline-none hover:bg-emerald-600 duration-300 ease-in-out',
    BUTTON_TRANSPARENT = 'bg-transparent text-emerald-500 px-12 py-5 text-md font-light tracking-wider focus:outline-none active:outline-none',
    CARD = 'group bg-white rounded-md light-shadow w-full hover:bg-emerald-500 ease-in-out duration-300',
    CARD_BODY = 'flex flex-col items-center justify-center px-10 py-20 w-full h-min',

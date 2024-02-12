@@ -53,6 +53,7 @@ export const HeaderBottom: FC = () => {
               </ul>
               <Button
                 value="Donate Now"
+                styles="px-12"
               />
             </div>
           </div>

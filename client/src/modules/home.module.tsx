@@ -1,12 +1,10 @@
 import React from 'react';
 import { FaPhone } from "react-icons/fa6";
-import { IoSettingsOutline } from "react-icons/io5";
 
-import { Button, Card } from '../components';
+import { Button } from '../components';
+import { MissionModule } from './mission.module';
 
 export const HomeModule = () => {
-   const desc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
-
    return (
       <div className="w-full max-h-full">
          <div className="w-full h-screen" style={{ backgroundImage: "url('./hero.png')", backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
@@ -40,19 +38,7 @@ export const HomeModule = () => {
                </div>
             </div>
          </div>
-
-         {/* Card Section */}
-         <div className="bg-slate-50 px-72 py-52">
-            <div className="text-center">
-               <p className="text-emerald-500 text-xl font-medium tracking-wider mb-6">What We Are Doing</p>
-               <h1 className="text-blue-950 text-5xl font-semibold tracking-wide leading-normal mb-20">We Are In A Mission To <br/> Help The Helpless</h1>
-            </div>
-            <div className="flex items-center gap-x-8">
-               <Card title="Clean water" description={desc} icon={(<IoSettingsOutline />)} />
-               <Card title="Clean water" description={desc} icon={(<IoSettingsOutline />)} active />
-               <Card title="Clean water" description={desc} icon={(<IoSettingsOutline />)} />
-            </div>
-         </div>
+         <MissionModule />
       </div>
    );
 }
