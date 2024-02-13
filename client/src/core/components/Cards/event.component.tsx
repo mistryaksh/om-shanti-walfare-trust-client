@@ -1,7 +1,12 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { FC } from 'react';
 
-import { EventCardProps } from '../../interface';
+type EventCardProps = {
+   title: string;
+   img: string;
+   date: string;
+   location: string;
+};
 
 export const EventCard: FC<EventCardProps> = ({ title, img, date, location }): JSX.Element => {
    return (

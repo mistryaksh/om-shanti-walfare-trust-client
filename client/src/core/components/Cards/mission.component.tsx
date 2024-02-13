@@ -1,9 +1,15 @@
 import React, { FC } from 'react';
 
-import { MissionCardProps } from '../../interface';
 import { MISSION_CARD_STYLES } from '../../constants';
 
 const STYLES = MISSION_CARD_STYLES;
+
+type MissionCardProps = {
+   title: string;
+   description: string;
+   icon: JSX.Element;
+   onClick?: () => void;
+};
 
 export const MissionCard: FC<MissionCardProps> = ({ title, description, icon, onClick}) => {
    return (

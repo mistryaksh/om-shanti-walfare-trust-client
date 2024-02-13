@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { EventCard as Card } from '../components';
+import { EventCard as Card } from '../core/components';
 
 export const BlogsModule: FC = (): JSX.Element => {
    return (

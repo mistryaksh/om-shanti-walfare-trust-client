@@ -1,10 +1,10 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
-import "./index.css";
+import "./styles/index.css";
 import 'animate.css';
 
-import { COMMON } from "./constants";
+import { COMMON } from "./core/constants";
 import App from "./App";
 
 

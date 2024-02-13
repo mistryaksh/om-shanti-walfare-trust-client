@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { Button } from '../components';
+import { Button } from '../core/components';
 
-export const AboutModule: FC = () => {
+export const AboutModule: FC = (): JSX.Element => {
    return (
       <div className="bg-white px-72 py-44">
          <div className="grid grid-cols-2">

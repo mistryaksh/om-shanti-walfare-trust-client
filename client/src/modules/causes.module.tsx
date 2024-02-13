@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { CauseCard as Card } from '../components';
+import { CauseCard as Card } from '../core/components';
 
 export const CausesModule: FC = () => {
    return (

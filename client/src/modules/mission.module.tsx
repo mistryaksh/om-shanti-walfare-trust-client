@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoSettingsOutline } from "react-icons/io5";
 
-import { MissionCard as Card } from '../components';
+import { MissionCard as Card } from '../core/components';
 
 export const MissionModule = () => {
    const desc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";

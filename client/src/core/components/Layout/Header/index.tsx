@@ -4,10 +4,10 @@ import { HeaderTop } from './top';
 import { HeaderBottom } from './bottom';
 
 export const Header: FC = () => {
-    return (
-        <section className="relative">
-            <HeaderTop />
-            <HeaderBottom />
-        </section>
-    );
+   return (
+      <section className="relative">
+         <HeaderTop />
+         <HeaderBottom />
+      </section>
+   );
 }

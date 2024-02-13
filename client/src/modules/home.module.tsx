@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaPhone } from "react-icons/fa6";
 
-import { Button } from '../components';
+import { Button } from '../core/components';
 import { MissionModule } from './mission.module';
 
 export const HomeModule = () => {
