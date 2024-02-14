@@ -31,7 +31,7 @@ export const SocialLinks: FC = (): JSX.Element => {
    ];
 
    return (
-      <div>
+      <div className="flex items-center gap-x-2.5">
          {socialMediaLinks.map((link, index) => (
             <Link
             key={index}

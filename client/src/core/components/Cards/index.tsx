@@ -1,3 +1,3 @@
-export * from './mission.component';
-export * from './cause.component';
-export * from './event.component';
+export * from './mission';
+export * from './cause';
+export * from './event';

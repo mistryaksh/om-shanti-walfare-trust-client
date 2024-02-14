@@ -1,16 +1,16 @@
 import React, { FC } from 'react';
 
-import { EventCard as Card } from '../core/components';
+import { EventCard as Card } from '../../core/components';
 
-export const BlogsModule: FC = (): JSX.Element => {
+export const EventsModule: FC = (): JSX.Element => {
    return (
-      <div className="bg-slate-50 px-72 py-48 w-full h-screen">
+      <div className="px-72 py-48 w-full h-screen" style={{ background: "url('./images/events-bg.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
          <div className="text-center">
             <p className="text-emerald-500 text-xl font-medium tracking-wider mb-6">
-               Our Recent Blog
+               What We Are Boing
             </p>
             <h1 className="text-blue-950 text-5xl font-semibold tracking-wide leading-normal mb-12">
-               Latest News From Our <br /> Recent Blog
+               We Arrange Many Social Events <br /> For Charity Donations
             </h1>
          </div>
          <div className="flex flex-col items-center gap-y-8">

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Button } from '../core/components';
+import { Button } from '../../core/components';
 
 export const AboutModule: FC = (): JSX.Element => {
    return (
