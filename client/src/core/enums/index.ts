@@ -7,10 +7,10 @@ export enum BUTTON_TYPES {
 export enum ROUTES {
    HOME = '/',
    ABOUT = '/about',
-   CAUSES = '/programs',
-   SOCIAL_EVENTS = '/events',
+   PROGRAMS = '/programs',
+   EVENTS = '/events',
    CONTACT = '/contact',
-   BLOG = '/blogs',
+   BLOGS = '/blogs',
 };
 
 export enum API_ROUTES {

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { CauseCard as Card } from '../../core/components';
 
-export const CausesModule: FC = () => {
+export const ProgramsModule: FC = () => {
    return (
       <div className="bg-slate-50 px-72 py-48">
          <div className="text-center">
@@ -10,7 +10,7 @@ export const CausesModule: FC = () => {
                Our Cases You Can See
             </p>
             <h1 className="text-blue-950 text-5xl font-semibold tracking-wide leading-normal mb-12">
-               Explore Our Latest Causes <br /> That We Works
+               Explore Our Latest Programs <br /> That We Works
             </h1>
          </div>
          <div className="flex items-center gap-x-8">

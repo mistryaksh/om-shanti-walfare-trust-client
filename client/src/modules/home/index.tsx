@@ -4,7 +4,7 @@ import { FaPhone } from "react-icons/fa6";
 import { Button } from '../../core/components';
 import { MissionModule } from '../mission';
 import { AboutModule } from '../about';
-import { CausesModule } from '../causes';
+import { ProgramsModule } from '../programs';
 import { EventsModule } from '../events';
 import { BlogsModule } from '../blogs';
 
@@ -44,7 +44,7 @@ export const HomeModule = () => {
          </div>
          <MissionModule />
          <AboutModule />
-         <CausesModule />
+         <ProgramsModule />
          <EventsModule />
          <BlogsModule />
       </div>

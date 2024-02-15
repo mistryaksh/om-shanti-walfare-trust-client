@@ -117,3 +117,25 @@ box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.00),
    box-shadow: 0px 8px 6px rgba(3, 7, 18, 0.01),
    0px 32px 24px rgba(3, 7, 18, 0.01);
 }
+
+.loader {
+   width: 150px;
+   height: 150px;
+   background: #fff;
+   border-radius: 50%;
+   position: relative;
+   animation: skLinRotate 1s ease-in-out infinite alternate;
+}
+
+.loader:after{
+   content:"";
+   position: absolute;
+   inset: 5px;
+   border-radius: 50%;
+   border: 5px solid transparent;
+   border-top-color: #09cc7f;
+}
+
+@keyframes skLinRotate {
+   95% ,100% { transform: rotate(840deg) }
+}

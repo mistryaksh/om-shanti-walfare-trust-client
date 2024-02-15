@@ -4,11 +4,11 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 
 type LayoutProps = {
-   children: JSX.Element | JSX.Element[];
+   children: React.ReactNode;
 };
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
-   const Main: FC = () => children as JSX.Element;
+   const Main: FC = () => children as React.ReactElement;
 
    return (
       <section>
