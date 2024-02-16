@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { EventCard as Card } from '../../core/components';
+// import { EventCard as Card } from '../../core/components';
 
 type EventsProps = {
    // title: string;
