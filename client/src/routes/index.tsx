@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Re, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import { ROUTES } from "../core/enums";
 import { Home, About, Programs, Events, Blogs, Contact } from "../pages";
