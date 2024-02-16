@@ -20,11 +20,11 @@ export const HeaderBottom: FC = () => {
          to: ROUTES.ABOUT,
       },
       {
-         name: "Latest Programs",
+         name: "Programs",
          to: ROUTES.PROGRAMS
       },
       {
-         name: "Our Events",
+         name: "Events",
          to: ROUTES.EVENTS
       },
       {
@@ -54,7 +54,7 @@ export const HeaderBottom: FC = () => {
                            STYLES.LINK +
                            (window.location.pathname === link.to
                            ? " text-emerald-500"
-                           : "text-blue-950")
+                           : " text-slate-400")
                         }
                      >
                         <Link to={link.to}>{link.name}</Link>

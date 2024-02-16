@@ -1,5 +1,5 @@
 export interface IEventCategory {
-   _id?: string,
+   _id: string,
    label: string,
    subTitle: string,
    active: boolean,

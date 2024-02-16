@@ -26,4 +26,5 @@ const ContactApi = createApi({
 });
 
 export const ContactApiReducer = ContactApi.reducer;
+export const ContactApiMiddleware = ContactApi.middleware;
 export const { useGetAllContactsQuery, useLazyGetContactByIdQuery } = ContactApi;

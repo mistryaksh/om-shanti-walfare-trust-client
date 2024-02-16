@@ -1,3 +1,3 @@
 export * from './mission';
-export * from './cause';
+export * from './program';
 export * from './event';

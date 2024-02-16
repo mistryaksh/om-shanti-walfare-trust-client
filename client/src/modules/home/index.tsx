@@ -44,8 +44,8 @@ export const HomeModule = () => {
          </div>
          <MissionModule />
          <AboutModule />
-         <ProgramsModule />
-         <EventsModule />
+         <ProgramsModule tagLine="Our Cases You Can See" heading="Explore Our Latest Programs That We Works" isHomePage />
+         <EventsModule isHomePage />
          <BlogsModule />
       </div>
    );

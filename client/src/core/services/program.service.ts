@@ -26,4 +26,5 @@ const ProgramApi = createApi({
 });
 
 export const ProgramApiReducer = ProgramApi.reducer;
+export const ProgramApiMiddleware = ProgramApi.middleware;
 export const { useGetAllProgramQuery, useLazyGetProgramByIdQuery } = ProgramApi;

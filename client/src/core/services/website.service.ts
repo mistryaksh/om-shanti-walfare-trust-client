@@ -32,4 +32,5 @@ const WebsiteApi = createApi({
 });
 
 export const WebsiteApiReducer = WebsiteApi.reducer;
+export const WebsiteApiMiddleware = WebsiteApi.middleware;
 export const { useNewUserContactMutation, useGetNgoProfileQuery } = WebsiteApi;

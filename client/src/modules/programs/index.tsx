@@ -1,23 +1,118 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
-import { CauseCard as Card } from '../../core/components';
+import { useGetAllProgramQuery, useGetAllEventsCategoryQuery } from '../../core/services';
+import { CauseCard as Card, Button } from '../../core/components';
 
-export const ProgramsModule: FC = () => {
+
+type ProgramsModuleProps = {
+   tagLine?: string;
+   heading?: string;
+   isHomePage?: boolean;
+};
+
+type SelectedCategoryProps = {
+   label: string;
+   id: string | null;
+};
+
+
+const smallButtonStyles = 'px-8 py-2 text-sm font-medium rounded-sm';
+
+export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHomePage }) => {
+   const [selectedCategory, setSelectedCategory] = useState<SelectedCategoryProps>({ label: 'All', id: null });
+   const { data: programs, isError: isProgramError, error: programError, isLoading: programLoading } = useGetAllProgramQuery();
+   const { data: categories, isError: isCategoryError, error: categoryError, isLoading: categoryLoading } = useGetAllEventsCategoryQuery();
+
+   const handleCategoryChange = (label: string, id: string | null) => {
+      setSelectedCategory({ label, id });
+   }
+
+   useEffect(() => {
+      if (isProgramError) {
+         console.log('Error:', programError);
+      }
+      if (isCategoryError) {
+         console.log('Error:', categoryError);
+      }
+   }, [isProgramError, programError, programs, programLoading, isCategoryError, categoryError, categories, categoryLoading]);
+
+
+   const renderPrograms = () => {
+      if (programLoading) {
+         return <p>Loading...</p>;
+      }
+
+      return (
+         <div className="grid grid-cols-3 items-center gap-x-8">
+            {programs?.data && programs?.data.length ? programs?.data
+               ?.slice(0, isHomePage ? 3 : programs?.data.length)
+               ?.filter((program) => program.categoryId._id === selectedCategory.id)
+               ?.map((program) => (
+                  <Card title={program.label} subTitle={program.subTitle} description={program.description} img={program.label} />
+            )) : (
+               <>
+                  <Card
+                     img="./images/case1.png"
+                     title="Ensure education for every poor childen"
+                     subTitle="The printing and typesetting industry."
+                     description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                  />
+                  <Card
+                     img="./images/case2.png"
+                     title="Providing healthy food for the children"
+                     subTitle="The printing and typesetting industry."
+                     description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                  />
+                  <Card
+                     img="./images/case3.png"
+                     title="Supply drinking water for the people"
+                     subTitle="The printing and typesetting industry."
+                     description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                  />
+               </>
+            )}
+         </div>
+      );
+   };
+
+   if (isHomePage) {
+      return (
+         <div className="bg-slate-50 px-64 py-44">
+            {tagLine && heading ? (
+               <div className="flex flex-col items-center justify-center w-full text-center">
+                  <p className="text-emerald-500 text-xl font-medium tracking-wider mb-6">
+                     {tagLine}
+                  </p>
+                  <h1 className="text-blue-950 text-5xl font-semibold tracking-wide leading-normal mb-12 w-3/5">
+                     {heading}
+                  </h1>
+               </div>
+            ) : null}
+            {renderPrograms()}
+         </div>
+      );
+   };
+
    return (
-      <div className="bg-slate-50 px-72 py-48">
-         <div className="text-center">
-            <p className="text-emerald-500 text-xl font-medium tracking-wider mb-6">
-               Our Cases You Can See
-            </p>
-            <h1 className="text-blue-950 text-5xl font-semibold tracking-wide leading-normal mb-12">
-               Explore Our Latest Programs <br /> That We Works
-            </h1>
+      <div>
+         <div className="flex items-center gap-x-2 mb-8">
+            <Button
+               onClick={() => handleCategoryChange('All', null)}
+               value="All"
+               styles={smallButtonStyles}
+               transparent={selectedCategory.label !== 'All'}
+            />
+            {!categoryLoading && categories?.data && categories?.data.length ? categories?.data?.map((category) => (
+               <Button
+                  onClick={() => handleCategoryChange(category.label, category._id)}
+                  value={category.label}
+                  styles={smallButtonStyles}
+                  transparent={selectedCategory.label !== category.label && selectedCategory.id !== category._id}
+               />
+            )) : null}
          </div>
-         <div className="flex items-center gap-x-8">
-            <Card title="Ensure education for every poor childen" raised={20000} goal={35000} img="./images/case1.png" />
-            <Card title="Providing healthy food for the children" raised={10000} goal={35000} img="./images/case2.png" />
-            <Card title="Supply drinking water for the people" raised={25000} goal={35000} img="./images/case3.png" />
-         </div>
+
+         {renderPrograms()}
       </div>
    );
 };

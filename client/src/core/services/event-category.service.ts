@@ -26,4 +26,5 @@ const EventCategoryApi = createApi({
 });
 
 export const EventCategotyApiReducer = EventCategoryApi.reducer;
+export const EventCategotyApiMiddleware = EventCategoryApi.middleware;
 export const { useGetAllEventsCategoryQuery, useLazyGetEventCategoryByIdQuery } = EventCategoryApi;
