@@ -16,7 +16,7 @@ export interface IEvent {
    description: string,
    bannerImage: string,
    active: boolean,
-   category: IEventCategory,
+   categoryId: string | IEventCategory,
    createdAt?: string;
    updatedAt?: string;
 }

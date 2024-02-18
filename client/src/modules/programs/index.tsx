@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 
 import { useGetAllProgramQuery, useGetAllEventsCategoryQuery } from '../../core/services';
-import { CauseCard as Card, Button } from '../../core/components';
+import { CauseCard as Card, Button, Loader } from '../../core/components';
 
 
 type ProgramsModuleProps = {
@@ -16,7 +16,7 @@ type SelectedCategoryProps = {
 };
 
 
-const smallButtonStyles = 'px-8 py-2 text-sm font-medium rounded-sm';
+const smallButtonStyles = 'px-8 py-2 text-s font-medium rounded-sm capitalize';
 
 export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHomePage }) => {
    const [selectedCategory, setSelectedCategory] = useState<SelectedCategoryProps>({ label: 'All', id: null });
@@ -28,7 +28,7 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
    }
 
    useEffect(() => {
-      if (isProgramError) {
+            if (isProgramError) {
          console.log('Error:', programError);
       }
       if (isCategoryError) {
@@ -39,16 +39,21 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
 
    const renderPrograms = () => {
       if (programLoading) {
-         return <p>Loading...</p>;
+         return <Loader />;
       }
 
       return (
-         <div className="grid grid-cols-3 items-center gap-x-8">
+         <div className="grid grid-cols-3 items-center gap-8">
             {programs?.data && programs?.data.length ? programs?.data
                ?.slice(0, isHomePage ? 3 : programs?.data.length)
-               ?.filter((program) => program.categoryId._id === selectedCategory.id)
+               ?.filter((program) => {
+                  if (isHomePage || selectedCategory.label === 'All') {
+                     return program;
+                  }
+                  return program.categoryId === selectedCategory.id;
+               })
                ?.map((program) => (
-                  <Card title={program.label} subTitle={program.subTitle} description={program.description} img={program.label} />
+                  <Card title={program.label} subTitle={program.subTitle} description={program.description} img={program.image || './images/no-image.jpeg'} />
             )) : (
                <>
                   <Card
@@ -101,14 +106,17 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
                value="All"
                styles={smallButtonStyles}
                transparent={selectedCategory.label !== 'All'}
+               sm
             />
             {!categoryLoading && categories?.data && categories?.data.length ? categories?.data?.map((category) => (
                <Button
                   onClick={() => handleCategoryChange(category.label, category._id)}
-                  value={category.label}
                   styles={smallButtonStyles}
                   transparent={selectedCategory.label !== category.label && selectedCategory.id !== category._id}
-               />
+                  sm
+               >
+                  <span className={selectedCategory.label !== category.label && selectedCategory.id !== category._id ? 'text-slate-500' : 'text-white'}>{category.label}</span>
+               </Button>
             )) : null}
          </div>
 

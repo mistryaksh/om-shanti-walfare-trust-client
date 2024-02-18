@@ -15,9 +15,9 @@ export enum ROUTES {
 
 export enum API_ROUTES {
    CONTACT = '/contact',
-   EVENTS = '/events',
-   CATEGORY = '/category',
-   PROGRAM = '/program',
+   EVENTS = '/events/all',
+   CATEGORY = '/category/all',
+   PROGRAM = '/program/all',
    NEW_USER_CONTACT = '/user/new',
    NGO_PROFILE = '/ngo',
 };

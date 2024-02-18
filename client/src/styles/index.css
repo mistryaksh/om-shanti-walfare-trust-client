@@ -118,24 +118,24 @@ box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.00),
    0px 32px 24px rgba(3, 7, 18, 0.01);
 }
 
+/* HTML: <div class="loader"></div> */
 .loader {
-   width: 150px;
-   height: 150px;
-   background: #fff;
+   --d:22px;
+   width: 4px;
+   height: 4px;
    border-radius: 50%;
-   position: relative;
-   animation: skLinRotate 1s ease-in-out infinite alternate;
+   color: #09cc7f;
+   box-shadow: 
+      calc(1*var(--d))      calc(0*var(--d))     0 0,
+      calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
+      calc(0*var(--d))      calc(1*var(--d))     0 2px,
+      calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+      calc(-1*var(--d))     calc(0*var(--d))     0 4px,
+      calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+      calc(0*var(--d))      calc(-1*var(--d))    0 6px;
+   animation: l27 1s infinite steps(8);
 }
 
-.loader:after{
-   content:"";
-   position: absolute;
-   inset: 5px;
-   border-radius: 50%;
-   border: 5px solid transparent;
-   border-top-color: #09cc7f;
-}
-
-@keyframes skLinRotate {
-   95% ,100% { transform: rotate(840deg) }
+@keyframes l27 {
+   100% {transform: rotate(1turn)}
 }
