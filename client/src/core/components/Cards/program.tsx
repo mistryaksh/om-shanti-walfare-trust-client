@@ -22,12 +22,12 @@ export const CauseCard: FC<ProgramCardProps> = ({ title, subTitle, description, 
             <img src={img} alt="program-image" className="w-full rounded-md-top object-cover aspect-video" />
          </div>
          <div className={STYLES.BODY}>
-            <h4 className={STYLES.SUB_TITLE}>
-               {subTitle}
-            </h4>
             <h3 className={STYLES.TITLE} onClick={onClick}>
                {title}
             </h3>
+            <h4 className={STYLES.SUB_TITLE}>
+               {subTitle}
+            </h4>
             <Button value="More details" sm block />
             {/* <p className={STYLES.DESCRIPTION}>
                <div dangerouslySetInnerHTML={{ __html: description as string | TrustedHTML }} />
