@@ -42,7 +42,7 @@ export const HomeModule = () => {
                </div>
             </div>
          </div>
-         <MissionModule />
+         <MissionModule isHome />
          <AboutModule />
          <ProgramsModule tagLine="Our Cases You Can See" heading="Explore Our Latest Programs That We Works" isHomePage />
          <EventsModule isHomePage />

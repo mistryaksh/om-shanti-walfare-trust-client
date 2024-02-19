@@ -5,9 +5,10 @@ export interface IProgram {
    label: string,
    subTitle: string,
    description: string,
+   image: string,
    requiredDonation: string,
    receivedDonation?: string,
-   categoryId: IEventCategory,
+   categoryId: string | IEventCategory,
    active: boolean,
    createdAt?: string;
    updatedAt?: string;
