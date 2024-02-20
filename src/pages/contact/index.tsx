@@ -3,13 +3,13 @@ import React, { FC } from 'react';
 import { Layout } from '../../core/components/Layout';
 import { PageLayout } from '../../core/components/Layout/Page';
 
+import { ContactModule } from '../../modules';
+
 export const Contact: FC = () => {
    return (
       <Layout>
-         <PageLayout title="Contact">
-            <h1 className="text-slate-400 text-4xl font-medium tracking-wide leading-normal mb-12 text-center">
-               Comming soon
-            </h1>
+         <PageLayout title="Contact US">
+            <ContactModule />
          </PageLayout>
       </Layout>
    );

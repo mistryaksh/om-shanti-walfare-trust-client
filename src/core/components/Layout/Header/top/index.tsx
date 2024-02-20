@@ -12,11 +12,11 @@ export const HeaderTop: FC = (): JSX.Element => {
       <div className="container mx-auto w-full px-10">
          <div className="flex items-center justify-between max-w-full">
             <div className="flex items-center gap-x-5">
-            <div className={STYLES.TEXT}>Phone: +99 (0) 101 0000 888</div>
-            <div className={STYLES.TEXT}>Email: noreply@yourdomain.com</div>
+            <div className={STYLES.TEXT}>Phone: +91 93729 97878</div>
+            <div className={STYLES.TEXT}>Email: omshantiwelfareturst@gmail.com</div>
             <div className={`border-none ${STYLES.TEXT}`}>Pan No: AAATO3609G</div>
             </div>
-            <div className="flex items-center gap-x-5">
+            {/* <div className="flex items-center gap-x-5">
             <Button
                className={STYLES.BUTTON}
             >
@@ -25,7 +25,7 @@ export const HeaderTop: FC = (): JSX.Element => {
                   <IoChevronDown />
                </div>
             </Button>
-            </div>
+            </div> */}
          </div>
       </div>
       </header>

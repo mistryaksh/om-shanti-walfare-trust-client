@@ -24,13 +24,13 @@ export const HeaderBottom: FC = () => {
          to: ROUTES.PROGRAMS
       },
       {
-         name: "Events",
+         name: "Gallery",
          to: ROUTES.EVENTS
       },
-      {
-         name: "Blogs",
-         to: ROUTES.BLOGS
-      },
+      // {
+      //    name: "Blogs",
+      //    to: ROUTES.BLOGS
+      // },
       {
          name: "Contact",
          to: ROUTES.CONTACT
@@ -38,7 +38,7 @@ export const HeaderBottom: FC = () => {
    ];
 
    return (
-      <header className="sticky top-0">
+      <header className="sticky top-0 block z-[9999] w-full">
       <div className="bg-white py-2.5 w-full smooth-shadow ">
          <div className="container mx-auto w-full pl-8 pr-10">
             <div className="flex items-center justify-between max-w-full">
