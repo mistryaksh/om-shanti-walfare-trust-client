@@ -5,7 +5,7 @@ import { HeaderBottom } from './bottom';
 
 export const Header: FC = () => {
    return (
-      <section className="relative">
+      <section className="relative block">
          <HeaderTop />
          <HeaderBottom />
       </section>

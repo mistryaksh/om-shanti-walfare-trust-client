@@ -13,7 +13,7 @@ const ProgramApi = createApi({
       GetAllProgram: query<{ data: IProgram[] }, void>({
          query: () => {
             return {
-               url: API_ROUTES.PROGRAM,
+               url: API_ROUTES.EVENTS,
                method: API_METHODS.GET,
             };
          },

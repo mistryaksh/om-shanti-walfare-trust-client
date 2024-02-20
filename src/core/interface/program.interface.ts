@@ -8,7 +8,7 @@ export interface IProgram {
    image: string,
    requiredDonation: string,
    receivedDonation?: string,
-   categoryId: string | IEventCategory,
+   categoryId: IEventCategory,
    active: boolean,
    createdAt?: string;
    updatedAt?: string;

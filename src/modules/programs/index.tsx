@@ -50,7 +50,7 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
                   if (isHomePage || selectedCategory.label === 'All') {
                      return program;
                   }
-                  return program.categoryId === selectedCategory.id;
+                  return program.categoryId._id === selectedCategory.id;
                })
                ?.map((program) => (
                   <Card title={program.label} subTitle={program.subTitle} description={program.description} img={program.image || './images/no-image.jpeg'} />
