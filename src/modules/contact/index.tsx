@@ -6,7 +6,7 @@ import { TfiMobile, TfiEmail } from "react-icons/tfi";
 import { IUserContact } from '../../core/interface';
 import { useNewUserContactMutation } from '../../core/services';
 
-import { Button } from '../../core/components';
+import { Button, Input } from '../../core/components';
 
 export const ContactModule: FC = () => {
    const [
@@ -32,21 +32,18 @@ export const ContactModule: FC = () => {
                      className="border border-slate-300 bg-transparent rounded-sm text-sm w-full focus:outline-none active:outline-none focus:border-emerald-500 active:border-emerald-500 px-4 py-3.5 placeholder-slate-400"
                   />
                   <div className="flex items-center gap-x-8 w-full">
-                     <input
+                     <Input
                         type="text"
                         placeholder="Enter your name"
-                        className="border border-slate-300 bg-transparent rounded-sm text-sm w-full focus:outline-none active:outline-none focus:border-emerald-500 active:border-emerald-500 px-4 py-3.5 placeholder-slate-400"
                      />
-                     <input
+                     <Input
                         type="email"
                         placeholder="Email"
-                        className="border border-slate-300 bg-transparent rounded-sm text-sm w-full focus:outline-none active:outline-none focus:border-emerald-500 active:border-emerald-500 px-4 py-3.5 placeholder-slate-400"
                      />
                   </div>
-                  <input
+                  <Input
                      type="text"
                      placeholder="Subject"
-                     className="border border-slate-300 bg-transparent rounded-sm text-sm w-full focus:outline-none active:outline-none focus:border-emerald-500 active:border-emerald-500 px-4 py-3.5 placeholder-slate-400"
                   />
                   <Button
                      value="Send Message"

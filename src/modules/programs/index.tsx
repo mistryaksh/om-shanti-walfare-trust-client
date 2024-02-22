@@ -64,6 +64,7 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
                      description={`${ROUTES.PROGRAMS}/${program._id}`}
                      img={program.image || './images/no-image.jpeg'}
                      onClick={() => navigate(`${ROUTES.PROGRAMS}/${program._id}`)}
+                     onDonate={() => navigate(`${ROUTES.DONATION}?programId=${program._id}`)}
                   />
             )) : (
                <>

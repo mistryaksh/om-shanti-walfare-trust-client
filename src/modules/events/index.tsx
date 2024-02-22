@@ -59,6 +59,7 @@ export const EventsModule: FC<EventsProps> = ({ isHomePage }): JSX.Element => {
                   subTitle={event.subTitle}
                   description={event.description}
                   onClick={() => navigate(`${ROUTES.EVENTS}/${event._id}`)}
+                  onDonate={() => navigate(`${ROUTES.DONATION}?eventId=${event._id}`)}
                />
             )) : null}
          </div>

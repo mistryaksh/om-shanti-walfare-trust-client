@@ -7,3 +7,4 @@ export * from './events';
 export * from './events/details';
 export * from './blogs';
 export * from './contact';
+export * from './donation';

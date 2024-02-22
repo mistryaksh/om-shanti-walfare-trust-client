@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { IHeaderLink } from "../../../../interface";
 import { COMMON, LAYOUT_STYLES } from "../../../../constants";
@@ -10,6 +11,8 @@ import { Button } from "../../../index";
 const STYLES = LAYOUT_STYLES;
 
 export const HeaderBottom: FC = () => {
+   const navigate = useNavigate();
+
    const links: IHeaderLink[] = [
       {
          name: "Home",
@@ -61,7 +64,7 @@ export const HeaderBottom: FC = () => {
                      </li>
                   ))}
                </ul>
-               <Button value="Donate Now" styles="px-12" />
+               <Button value="Donate Now" styles="px-12" onClick={() => navigate(ROUTES.DONATION)} />
             </div>
             </div>
          </div>
