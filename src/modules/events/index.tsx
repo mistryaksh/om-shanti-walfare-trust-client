@@ -1,7 +1,9 @@
 
 import React, { FC, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useGetAllEventsQuery, useGetAllEventsCategoryQuery } from '../../core/services';
+import { ROUTES } from '../../core/enums';
 
 import { EventCard as Card, Loader, Button } from '../../core/components';
 
@@ -18,6 +20,8 @@ export const EventsModule: FC<EventsProps> = ({ isHomePage }): JSX.Element => {
    const [selectedCategory, setSelectedCategory] = useState<SelectedCategoryProps>({ label: 'All', id: null });
    const { data: events, isError: isEventError, error: eventError, isLoading: eventLoading } = useGetAllEventsQuery();
    const { data: categories, isError: isCategoryError, error: categoryError, isLoading: categoryLoading } = useGetAllEventsCategoryQuery();
+
+   const navigate = useNavigate();
    
    const handleCategoryChange = (label: string, id: string | null) => {
       setSelectedCategory({ label, id });
@@ -38,26 +42,26 @@ export const EventsModule: FC<EventsProps> = ({ isHomePage }): JSX.Element => {
       }
 
       return (
-         <div className="flex flex-col items-center gap-y-8">
-            <div className="grid grid-cols-3 gap-8">
-               {events?.data && events?.data.length ? events?.data
-               ?.slice(0, isHomePage ? 3 : events?.data.length)
-               ?.filter((event) => {
-                  if (isHomePage || selectedCategory.label === 'All') {
-                     return event;
-                  }
-                  return event.categoryId === selectedCategory.id;
-               })
-               ?.map((event) => (
-                  <Card
-                     title={event.label}
-                     img={event.image || './images/no-image.jpeg'}
-                     date={new Date(event.postedOn)}
-                     subTitle={event.subTitle}
-                     description={event.description}
-                  />
-               )) : null}
-            </div>
+         <div className="grid grid-cols-3 gap-8">
+            {events?.data && events?.data.length ? events?.data
+            ?.slice(0, isHomePage ? 3 : events?.data.length)
+            ?.filter((event) => {
+               if (isHomePage || selectedCategory.label === 'All') {
+                  return event;
+               }
+               return event.categoryId._id === selectedCategory.id;
+            })
+            ?.map((event) => (
+               <Card
+                  title={event.label}
+                  img={event.image || './images/no-image.jpeg'}
+                  date={new Date(event.postedOn)}
+                  subTitle={event.subTitle}
+                  description={event.description}
+                  onClick={() => navigate(`${ROUTES.EVENTS}/${event._id}`)}
+                  onDonate={() => navigate(`${ROUTES.DONATION}?eventId=${event._id}`)}
+               />
+            )) : null}
          </div>
       );
    }

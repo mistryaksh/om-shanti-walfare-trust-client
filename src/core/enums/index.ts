@@ -11,6 +11,7 @@ export enum ROUTES {
    EVENTS = '/events',
    CONTACT = '/contact',
    BLOGS = '/blogs',
+   DONATION = '/donation',
 };
 
 export enum API_ROUTES {
