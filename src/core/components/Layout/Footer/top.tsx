@@ -34,7 +34,7 @@ export const FooterTop: FC = () => {
    return (
       <div className="grid grid-cols-12 gap-x-20 mb-28">
          <div className="col-span-3">
-            <img src="./transparent-logo.png" alt="logo" className="w-28" />
+            <img src="/transparent-logo.png" alt="logo" className="w-28" />
          </div>
          <div className="col-span-4">
             <h4 className="text-lg font-medium text-white mb-6">Contact Info</h4>

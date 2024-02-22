@@ -13,22 +13,23 @@ type ProgramCardProps = {
    subTitle?: string;
    description?: string;
    onClick?: () => void;
+   onDonate?: () => void;
 };
 
-export const CauseCard: FC<ProgramCardProps> = ({ title, subTitle, description, img, onClick }) => {
+export const ProgramCard: FC<ProgramCardProps> = ({ title, subTitle, description, img, onClick, onDonate }) => {
    return (
       <div className={STYLES.MAIN}>
          <div className={STYLES.IMG}>
             <img src={img} alt="program-image" className="w-full rounded-md-top object-cover aspect-video" />
          </div>
          <div className={STYLES.BODY}>
-            <h3 className={STYLES.TITLE} onClick={onClick}>
-               {title}
-            </h3>
             <h4 className={STYLES.SUB_TITLE}>
                {subTitle}
             </h4>
-            <Button value="More details" sm block />
+            <h3 className={STYLES.TITLE} onClick={onClick}>
+               {title}
+            </h3>
+            <Button value="Donate Now" onClick={onDonate} sm />
             {/* <p className={STYLES.DESCRIPTION}>
                <div dangerouslySetInnerHTML={{ __html: description as string | TrustedHTML }} />
             </p> */}

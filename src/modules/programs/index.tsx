@@ -1,7 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useGetAllProgramQuery, useGetAllEventsCategoryQuery } from '../../core/services';
-import { CauseCard as Card, Button, Loader } from '../../core/components';
+import { ProgramCard as Card, Button, Loader } from '../../core/components';
+
+import { ROUTES } from '../../core/enums';
 
 
 type ProgramsModuleProps = {
@@ -22,6 +25,8 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
    const [selectedCategory, setSelectedCategory] = useState<SelectedCategoryProps>({ label: 'All', id: null });
    const { data: programs, isError: isProgramError, error: programError, isLoading: programLoading } = useGetAllProgramQuery();
    const { data: categories, isError: isCategoryError, error: categoryError, isLoading: categoryLoading } = useGetAllEventsCategoryQuery();
+
+   const navigate = useNavigate();
 
    const handleCategoryChange = (label: string, id: string | null) => {
       setSelectedCategory({ label, id });
@@ -53,7 +58,13 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
                   return program.categoryId._id === selectedCategory.id;
                })
                ?.map((program) => (
-                  <Card title={program.label} subTitle={program.subTitle} description={program.description} img={program.image || './images/no-image.jpeg'} />
+                  <Card
+                     title={program.label}
+                     subTitle={program.subTitle}
+                     description={`${ROUTES.PROGRAMS}/${program._id}`}
+                     img={program.image || './images/no-image.jpeg'}
+                     onClick={() => navigate(`${ROUTES.PROGRAMS}/${program._id}`)}
+                  />
             )) : (
                <>
                   <Card

@@ -3,7 +3,7 @@ export * from './styles';
 export const COMMON = {
     ROOT: 'root',
     LINK_TARGET: '_blank',
-    LOGO: './logo.png',
+    LOGO: '/logo.png',
     EMPTY_SPACE: ' ',
 };
 
