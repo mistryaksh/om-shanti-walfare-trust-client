@@ -21,8 +21,8 @@ export const MISSION_CARD_STYLES = {
 export const CAUSE_CARD_STYLES = {
    MAIN: 'group bg-white rounded-md light-shadow w-full ease-in-out duration-300 overflow-hidden',
    BODY: 'px-5 py-6 w-full h-min',
-   TITLE: 'text-xl text-blue-950 font-semibold capitalize tracking-wide mb-10 hover:text-emerald-500 cursor-pointer ease-in-out duration-200',
-   SUB_TITLE: 'text-sm text-slate-400 font-light capitalize tracking-wide mb-2',
+   TITLE: 'text-xl text-blue-950 font-semibold capitalize tracking-wide mb-10 hover:text-emerald-500 cursor-pointer ease-in-out duration-200 truncate',
+   SUB_TITLE: 'text-sm text-slate-400 font-light capitalize tracking-wide mb-2 truncate',
    DESCRIPTION: 'text-xs text-slate-500 font-light capitalize tracking-normal leading-5',
    IMG: 'w-full object-cover rounded-md-top group-hover:scale-105 ease-in-out duration-300',
    RAISED: 'text-blue-950 font-medium tracking-wide text-sm',

@@ -1,14 +1,14 @@
 import React from 'react';
 import { FaPhone } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
+import { ROUTES } from '../../core/enums';
 import { Button } from '../../core/components';
-import { MissionModule } from '../mission';
-import { AboutModule } from '../about';
-import { ProgramsModule } from '../programs';
-import { EventsModule } from '../events';
-// import { BlogsModule } from '../blogs';
+import { MissionModule, AboutModule, ProgramsModule, EventsModule } from '../../modules';
 
 export const HomeModule = () => {
+   const navigate = useNavigate();
+
    return (
       <div className="w-full max-h-full">
          <div className="w-full h-screen" style={{ backgroundImage: "url('./hero.png')", backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
@@ -27,6 +27,7 @@ export const HomeModule = () => {
                         <Button
                            value="Donate Now"
                            styles="animate__animated animate__fadeInLeft animate__delay-1s"
+                           onClick={() => navigate(ROUTES.DONATION)}
                         />
                         <Button
                            styles="animate__animated animate__fadeInRight animate__delay-1s"
@@ -46,7 +47,6 @@ export const HomeModule = () => {
          <AboutModule />
          <ProgramsModule tagLine="Our Cases You Can See" heading="Explore Our Latest Programs That We Works" isHomePage />
          <EventsModule isHomePage />
-         {/* <BlogsModule /> */}
       </div>
    );
 }

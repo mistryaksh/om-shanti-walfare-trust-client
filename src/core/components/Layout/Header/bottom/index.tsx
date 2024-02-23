@@ -46,7 +46,9 @@ export const HeaderBottom: FC = () => {
          <div className="container mx-auto w-full pl-8 pr-10">
             <div className="flex items-center justify-between max-w-full">
             <div>
-               <img src={COMMON.LOGO} alt="Logo" className="py-1 w-24" />
+               <Link to={ROUTES.HOME}>
+                  <img src={COMMON.LOGO} alt="Logo" className="py-1 w-24" />
+               </Link>
             </div>
             <div className="flex items-center gap-x-12">
                <ul className="flex items-center gap-x-12">
