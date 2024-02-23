@@ -13,7 +13,7 @@ export const HomeModule = () => {
       <div className="w-full max-h-full">
          <div className="w-full h-screen" style={{ backgroundImage: "url('./hero.png')", backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
             <div className="container mx-auto">
-               <div className="flex items-center justify-start px-40 py-52">
+               <div className="flex items-center justify-start px-14 py-52">
                   <div>
                      <div className="animate__animated animate__fadeInUp animate__delay-0.8s">
                         <h1 className="text-blue-950 text-7xl tracking-wider font-bold leading-tight mb-6">
@@ -43,10 +43,9 @@ export const HomeModule = () => {
                </div>
             </div>
          </div>
-         <MissionModule isHome />
-         <AboutModule />
          <ProgramsModule tagLine="Our Cases You Can See" heading="Explore Our Latest Programs That We Works" isHomePage />
-         <EventsModule isHomePage />
+         <AboutModule />
+         <MissionModule />
       </div>
    );
 }

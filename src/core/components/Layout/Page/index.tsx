@@ -9,7 +9,7 @@ export const PageLayout: FC<PageLayoutProps> = ({ title, children }) => {
    return (
       <div>
          <div
-            className="h-80 w-full"
+            className="h-72 w-full"
             style={{
                background: "url('./images/hero2.png')",
                backgroundRepeat: 'no-repeat',
@@ -23,7 +23,7 @@ export const PageLayout: FC<PageLayoutProps> = ({ title, children }) => {
                </h1>
             </div>
          </div>
-         <div className="bg-slate-50 px-64 py-44">
+         <div className="bg-slate-50 px-40 py-40">
             {children}
          </div>
       </div>
