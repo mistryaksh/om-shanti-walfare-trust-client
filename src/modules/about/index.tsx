@@ -7,7 +7,7 @@ export const AboutModule: FC = (): JSX.Element => {
    const navigate = useNavigate();
 
    return (
-      <div className="bg-white px-64 py-44">
+      <div className="bg-white px-40 py-44">
          <div className="grid grid-cols-2">
             <div className="w-full">
                <p className="text-emerald-500 text-xl font-medium tracking-wider mb-6">
@@ -30,10 +30,10 @@ export const AboutModule: FC = (): JSX.Element => {
             </div>
             <div className="relative w-full bg-white">
                <div className="flex flex-col items-end">
-                  <img src="./images/about1.png" alt="about-1" />
+                  <img src="./images/about1.jpg" alt="about-1" className="w-96" />
                </div>
-               <div className="absolute bottom-14 left-16">
-                  <img src="./images/about2.png" alt="about-2" />
+               <div className="absolute bottom-4 left-28">
+                  <img src="./images/about2.jpg" alt="about-2" className="w-64 border-r-[14px] border-t-[14px] border-emerald-500" />
                </div>
             </div>
          </div>

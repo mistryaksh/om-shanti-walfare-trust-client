@@ -17,6 +17,7 @@ export const ContactModule: FC = () => {
    const [
       newUserContact,
       {
+         data,
          error,
          isError,
          isSuccess,
@@ -28,7 +29,13 @@ export const ContactModule: FC = () => {
       if (isError) {
          console.log(error);
       }
-   }, [isError, error]);
+
+      if (isSuccess) {
+         toast.success(data?.data || "Message sent successfully!");
+         setNewContact(ContactInitialValues);
+         navigate("/");
+      }
+   }, [isError, error, isSuccess, data, navigate]);
 
    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
@@ -43,11 +50,7 @@ export const ContactModule: FC = () => {
       const contactDoc: IUserContact = newContact;
       
       try {
-         await newUserContact({ contact: contactDoc });
-         if (isSuccess) {
-            toast.success("Message sent successfully!");
-            navigate("/");
-         }
+         await newUserContact(contactDoc);
       } catch (err) {
          toast.error("Error sending message!");
       }

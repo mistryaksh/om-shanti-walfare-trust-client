@@ -48,7 +48,7 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
       }
 
       return (
-         <div className="grid grid-cols-3 items-center gap-8">
+         <div className="grid grid-cols-2 items-center gap-8">
             {programs?.data && programs?.data.length ? programs?.data
                ?.slice(0, isHomePage ? 3 : programs?.data.length)
                ?.filter((program) => {
@@ -61,7 +61,7 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
                   <Card
                      title={program.label}
                      subTitle={program.subTitle}
-                     description={`${ROUTES.PROGRAMS}/${program._id}`}
+                     description={program.description}
                      img={program.image || './images/no-image.jpeg'}
                      onClick={() => navigate(`${ROUTES.PROGRAMS}/${program._id}`)}
                      onDonate={() => navigate(`${ROUTES.DONATION}?programId=${program._id}`)}
@@ -94,7 +94,7 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
 
    if (isHomePage) {
       return (
-         <div className="bg-slate-50 px-64 py-44">
+         <div className="bg-slate-50 px-40 py-40">
             {tagLine && heading ? (
                <div className="flex flex-col items-center justify-center w-full text-center">
                   <p className="text-emerald-500 text-xl font-medium tracking-wider mb-6">

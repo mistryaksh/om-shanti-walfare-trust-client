@@ -29,10 +29,12 @@ export const ProgramCard: FC<ProgramCardProps> = ({ title, subTitle, description
             <h3 className={STYLES.TITLE} onClick={onClick}>
                {title}
             </h3>
-            <Button value="Donate Now" onClick={onDonate} sm />
-            {/* <p className={STYLES.DESCRIPTION}>
+            <p className={STYLES.DESCRIPTION}>
                <div dangerouslySetInnerHTML={{ __html: description as string | TrustedHTML }} />
-            </p> */}
+            </p>   
+            <div className="mt-6">
+               <Button value="Donate Now" onClick={onDonate} sm />
+            </div>
          </div>
       </div>
    );
