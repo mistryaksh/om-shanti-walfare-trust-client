@@ -15,7 +15,7 @@ export const Wrapper: FC<WrapperProps> = ({ children }) => {
         <Provider store={Store}>
             <ToastContainer autoClose={3000} />
             
-            <div className="animate__animated animate__fadeIn">
+            <div className="overflow-hidden animate__animated animate__fadeIn">
                 {children}
             </div>
         </Provider>

@@ -13,7 +13,7 @@ export const FounderCard: FC<FounderCardProps> = ({ title, description}) => {
    return (
       <div className={STYLES.MAIN}>
          <div className={STYLES.BODY}>
-            <h3 className={`${STYLES.TITLE} text-3xl -mt-2`}>
+            <h3 className={`${STYLES.TITLE} text-2xl sm:text-3xl -mt-3 sm:-mt-2`}>
                {title}
             </h3>
             <p className={STYLES.DESCRIPTION}>
