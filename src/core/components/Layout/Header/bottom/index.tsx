@@ -60,7 +60,7 @@ export const HeaderBottom: FC = () => {
                   <Link to={ROUTES.HOME}>
                      <img src={COMMON.LOGO} alt="Logo" className="py-1 w-14 sm:w-24" />
                   </Link>
-                  <Button onClick={handleMenuOpen} styles="rounded-full px-3.5" sm>
+                  <Button onClick={handleMenuOpen} styles="rounded-full px-[14px]" sm>
                      <GiHamburgerMenu />
                   </Button>
                </div>
