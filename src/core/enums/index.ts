@@ -22,6 +22,7 @@ export enum API_ROUTES {
    PROGRAM = '/program/all',
    NEW_USER_CONTACT = '/user/new',
    NGO_PROFILE = '/ngo',
+   DONATIONS = '/donations',
 };
 
 export enum API_METHODS {

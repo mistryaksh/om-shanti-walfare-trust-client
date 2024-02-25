@@ -5,6 +5,7 @@ export const COMMON = {
     LINK_TARGET: '_blank',
     LOGO: '/logo.png',
     EMPTY_SPACE: ' ',
+    EMPTY_STRING: "",
 };
 
 export const SOCIAL_MEDIA_LINKS = {

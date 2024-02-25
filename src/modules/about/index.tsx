@@ -37,7 +37,7 @@ export const AboutModule: FC = (): JSX.Element => {
                <div className="flex flex-col items-end">
                   <img src="./images/about1.jpg" alt="about-1" className="w-96" />
                </div>
-               <div className="absolute bottom-4 left-28">
+               <div className="absolute -bottom-8 left-28">
                   <img src="./images/about2.jpg" alt="about-2" className="w-64 border-r-[14px] border-t-[14px] border-emerald-500" />
                </div>
             </div>

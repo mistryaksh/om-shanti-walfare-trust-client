@@ -9,7 +9,7 @@ export const ActivitiesModule: FC = () => {
             </div>
             <div className="">
                <div className="flex flex-wrap sm:flex-nowrap gap-6 w-full">
-                  <div className="flex flex-col gap-y-6">
+                  <div className="flex flex-col-reverse sm:flex-col gap-y-6">
                      <div className="border-[6px] sm:border-[10px] border-y-slate-300 border-x-emerald-400 pl-1.5 sm:pl-2.5 pt-1.5 sm:pt-2.5 rounded">
                         <img src="/images/activities/activity1.jpg" alt="activity" className="aspect-video rounded" />
                      </div>

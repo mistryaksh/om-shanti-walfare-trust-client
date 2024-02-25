@@ -6,7 +6,8 @@ import {
    EventApiMiddleware,
    EventCategotyApiMiddleware,
    ProgramApiMiddleware,
-   WebsiteApiMiddleware
+   WebsiteApiMiddleware,
+   DonationApiMiddleware
 } from "../services";
 
 export const rootMiddleware: Middleware[] = [
@@ -14,5 +15,6 @@ export const rootMiddleware: Middleware[] = [
    EventApiMiddleware,
    EventCategotyApiMiddleware,
    ProgramApiMiddleware,
-   WebsiteApiMiddleware
+   WebsiteApiMiddleware,
+   DonationApiMiddleware
 ];

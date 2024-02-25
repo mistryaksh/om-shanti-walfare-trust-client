@@ -15,7 +15,7 @@ export const ContactModule: FC = () => {
    const navigate = useNavigate();
 
    const [
-      newUserContact,
+      NewUserContact,
       {
          data,
          error,
@@ -50,7 +50,7 @@ export const ContactModule: FC = () => {
       const contactDoc: IUserContact = newContact;
       
       try {
-         await newUserContact(contactDoc);
+         await NewUserContact(contactDoc);
       } catch (err) {
          toast.error("Error sending message!");
       }

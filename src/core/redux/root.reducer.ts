@@ -5,7 +5,8 @@ import {
    EventApiReducer,
    EventCategotyApiReducer,
    ProgramApiReducer,
-   WebsiteApiReducer
+   WebsiteApiReducer,
+   DonationApiReducer
 } from "../services";
 
 export const rootReducer = combineReducers({
@@ -14,4 +15,5 @@ export const rootReducer = combineReducers({
    eventCategoryApi: EventCategotyApiReducer,
    programApi: ProgramApiReducer,
    websiteApi: WebsiteApiReducer,
+   donationApi: DonationApiReducer
 });
