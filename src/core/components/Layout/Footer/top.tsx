@@ -32,13 +32,13 @@ export const FooterTop: FC = () => {
    ];
 
    return (
-      <div className="grid grid-cols-12 gap-x-20 mb-28">
-         <div className="col-span-3">
-            <img src="/transparent-logo.png" alt="logo" className="w-28" />
+      <div className="grid grid-cols-12 gap-x-20 gap-y-8 mb-10 sm:mb-28 w-full">
+         <div className="col-span-12 sm:col-span-3">
+            <img src="/transparent-logo.png" alt="logo" className="w-20 sm:w-28" />
          </div>
-         <div className="col-span-4">
-            <h4 className="text-lg font-medium text-white mb-6">Contact Info</h4>
-            <ul className="flex flex-col items-start gap-y-4 text-slate-500 text-base font-light tracking-wide">
+         <div className="col-span-12 sm:col-span-4">
+            <h4 className="text-sm sm:text-lg font-medium text-white mb-3.5 sm:mb-6">Contact Info</h4>
+            <ul className="flex flex-col items-start gap-y-2.5 sm:gap-y-4 text-slate-500 text-xs sm:text-base font-light tracking-wide w-full">
                <li>
                   Address: 123, Lorem Ipsum, <br /> Dolor Sit Amet
                </li>
@@ -50,9 +50,9 @@ export const FooterTop: FC = () => {
                </li>
             </ul>
          </div>
-         <div className="col-span-4">
-            <h4 className="text-lg font-medium text-white mb-6">Important Links</h4>
-            <ul className="flex flex-col items-start gap-y-4">
+         <div className="col-span-12 sm:col-span-4">
+            <h4 className="text-sm sm:text-lg font-medium text-white mb-3 sm:mb-6">Important Links</h4>
+            <ul className="flex flex-col items-start gap-y-2.5 sm:gap-y-4">
                {links.map((link, index) => (
                   <li
                      key={index}

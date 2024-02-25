@@ -11,10 +11,10 @@ export const MissionModule: FC = () => {
       return (
          <>
             <div className="text-center">
-               <p className="text-emerald-500 text-xl font-medium tracking-wider mb-6">What We Are Doing</p>
-               <h1 className="text-blue-950 text-5xl font-semibold tracking-wide leading-normal mb-20">We Are In A Mission To <br/> Help The Helpless</h1>
+               <p className="text-emerald-500 text-sm sm:text-xl font-medium tracking-wide sm:tracking-wider mb-4 sm:mb-6">What We Are Doing</p>
+               <h1 className="text-blue-950 text-3xl sm:text-5xl font-semibold tracking-wide leading-normal mb-8 sm:mb-20">We Are In A Mission To <br/> Help The Helpless</h1>
             </div>
-            <div className="grid grid-cols-4 items-center gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-4 items-center gap-6 sm:gap-8">
                <Card
                   title="Raise Awareness"
                   description="Increase knowledge about HIV/AIDS transmission, prevention, and cancer risk factors within the target community"
@@ -42,7 +42,7 @@ export const MissionModule: FC = () => {
 
    
       return (
-         <div className="bg-slate-50 px-40 py-40">
+         <div className="bg-slate-50 px-8 sm:px-40 py-16 sm:py-40">
             {renderMissions()}
          </div>
       );

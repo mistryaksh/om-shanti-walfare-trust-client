@@ -48,7 +48,7 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
       }
 
       return (
-         <div className="grid grid-cols-2 items-center gap-8">
+         <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-6 sm:gap-8">
             {programs?.data && programs?.data.length ? programs?.data
                ?.slice(0, isHomePage ? 3 : programs?.data.length)
                ?.filter((program) => {
@@ -94,13 +94,13 @@ export const ProgramsModule: FC<ProgramsModuleProps> = ({ tagLine, heading, isHo
 
    if (isHomePage) {
       return (
-         <div className="bg-slate-50 px-40 py-40">
+         <div className="bg-slate-50 px-8 sm:px-40 py-16 sm:py-40">
             {tagLine && heading ? (
                <div className="flex flex-col items-center justify-center w-full text-center">
-                  <p className="text-emerald-500 text-xl font-medium tracking-wider mb-6">
+                  <p className="text-emerald-500 text-sm sm:text-xl font-medium tracking-wide sm:tracking-wider mb-4 sm:mb-6">
                      {tagLine}
                   </p>
-                  <h1 className="text-blue-950 text-5xl font-semibold tracking-wide leading-normal mb-12 w-3/5">
+                  <h1 className="text-blue-950 text-3xl sm:text-5xl font-semibold tracking-wide leading-normal mb-8 sm:mb-12 w-full sm:w-3/5">
                      {heading}
                   </h1>
                </div>

@@ -15,7 +15,7 @@ export const ContactModule: FC = () => {
    const navigate = useNavigate();
 
    const [
-      newUserContact,
+      NewUserContact,
       {
          data,
          error,
@@ -50,7 +50,7 @@ export const ContactModule: FC = () => {
       const contactDoc: IUserContact = newContact;
       
       try {
-         await newUserContact(contactDoc);
+         await NewUserContact(contactDoc);
       } catch (err) {
          toast.error("Error sending message!");
       }
@@ -58,10 +58,10 @@ export const ContactModule: FC = () => {
 
    return (
       <div className="w-full">
-         <h4 className="text-blue-950 text-3xl font-normal mb-6">Get in Touch</h4>
-         <div className="grid grid-cols-12 gap-x-28">
-            <div className="col-span-8">
-               <form onSubmit={handleSubmit} className="flex flex-col items-start justify-between gap-y-8 w-full">
+         <h4 className="text-blue-950 text-xl sm:text-3xl font-normal mb-6">Get in Touch</h4>
+         <div className="grid grid-cols-1 sm:grid-cols-12 gap-y-16 gap-x-28">
+            <div className="col-span-4 sm:col-span-8">
+               <form onSubmit={handleSubmit} className="flex flex-wrap items-start justify-between gap-y-6 sm:gap-y-8 w-full">
                   <textarea
                      rows={6}
                      name="message"
@@ -69,9 +69,9 @@ export const ContactModule: FC = () => {
                      onChange={handleChange}
                      placeholder="Enter your message here"
                      required
-                     className={`border border-slate-300 bg-${isLoading ? 'slate-200' : 'transparent'} rounded-sm text-sm w-full focus:outline-none active:outline-none focus:border-emerald-500 active:border-emerald-500 px-4 py-3.5 placeholder-slate-400 duration-150`}
+                     className={`border border-slate-300 bg-${isLoading ? 'slate-200' : 'transparent'} rounded-sm text-sm w-full focus:outline-none active:outline-none focus:border-emerald-500 active:border-emerald-500 px-3 sm:px-4 py-2.5 sm:py-3.5 placeholder-slate-400 duration-150`}
                   />
-                  <div className="flex items-center gap-x-8 w-full">
+                  <div className="flex flex-wrap sm:flex-nowrap items-center gap-6 sm:gap-8 w-full">
                      <Input
                         type="text"
                         name="fullName"
@@ -106,26 +106,26 @@ export const ContactModule: FC = () => {
                   />
                </form>
             </div>
-            <div className="col-span-4 flex flex-col gap-y-10">
+            <div className="col-span-4 flex flex-col gap-y-5 sm:gap-y-10">
                <div className="flex items-start gap-x-3">
-                  <IoHomeOutline className="text-2xl text-slate-400 mt-1" />
+                  <IoHomeOutline className="text-lg sm:text-2xl text-slate-400 mt-1" />
                   <div>
-                     <h4 className="text-blue-950 text-base font-light mb-1">1234 Street Name,</h4>
-                     <p className="text-slate-500 text-base font-light">City Name, United States</p>
+                     <h4 className="text-blue-950 text-sm sm:text-base font-light mb-1">1234 Street Name,</h4>
+                     <p className="text-slate-500 text-sm sm:text-base font-light">City Name, United States</p>
                   </div>
                </div>
                <div className="flex items-start gap-x-3">
-                  <TfiMobile className="text-2xl text-slate-400 mt-1" />
+                  <TfiMobile className="text-lg sm:text-2xl text-slate-400 mt-1" />
                   <div>
-                     <h4 className="text-blue-950 text-base font-light mb-1">+91 93729 97878</h4>
-                     <p className="text-slate-500 text-base font-light">Mon to Fri 9am to 6pm</p>
+                     <h4 className="text-blue-950 text-sm sm:text-base font-light mb-1">+91 93729 97878</h4>
+                     <p className="text-slate-500 text-sm sm:text-base font-light">Mon to Fri 9am to 6pm</p>
                   </div>
                </div>
                <div className="flex items-start gap-x-3">
-                  <TfiEmail className="text-2xl text-slate-400 mt-1" />
+                  <TfiEmail className="text-lg sm:text-2xl text-slate-400 mt-1" />
                   <div>
-                     <h4 className="text-blue-950 text-base font-light mb-1">omshantiwelfareturst@gmail.com</h4>
-                     <p className="text-slate-500 text-base font-light">Send us your query anytime!</p>
+                     <h4 className="text-blue-950 text-sm sm:text-base font-light mb-1">omshantiwelfareturst@gmail.com</h4>
+                     <p className="text-slate-500 text-sm sm:text-base font-light">Send us your query anytime!</p>
                   </div>
                </div>
             </div>

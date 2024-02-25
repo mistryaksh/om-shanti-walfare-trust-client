@@ -3,3 +3,4 @@ export * from './contact.interface';
 export * from './event.interface';
 export * from './program.interface';
 export * from './ngo.interface';
+export * from './donation.interface';
