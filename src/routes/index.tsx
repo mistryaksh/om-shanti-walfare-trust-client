@@ -14,6 +14,7 @@ import {
      Donation,
      TermsAndConditionPage,
      RefundPolicyPage,
+     SuccessFailurePage,
 } from "../pages";
 
 export const AppRoute = () => {
@@ -31,6 +32,7 @@ export const AppRoute = () => {
                     <Route path={ROUTES.DONATION} element={<Donation />} />
                     <Route path={ROUTES.TERMS_CONDITION} element={<TermsAndConditionPage />} />
                     <Route path={ROUTES.REFUND_POLICY} element={<RefundPolicyPage />} />
+                    <Route path={ROUTES.DONATION_STATUS} element={<SuccessFailurePage />} />
                     <Route path="*" element={<Navigate to={ROUTES.HOME} />} />
                </Routes>
           </BrowserRouter>

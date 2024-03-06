@@ -1,8 +1,8 @@
 export interface IDonation {
    amount: number,
-   custName: string,
+   userName: string,
    email: string,
    mobile: string,
-   referenceId: string,
+   userId: string,
    status: string,
 }

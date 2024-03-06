@@ -1,11 +1,11 @@
 import React, { FC, useState, useEffect } from 'react';
-import { useNavigate, useSearchParams, redirect } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { v4 as uuidv4 } from 'uuid';
 
 import { IDonation } from '../../core/interface';
 import { DonationInitialValues } from '../../validation';
 import { useNewDonationMutation } from '../../core/services';
-import { COMMON } from "../../core/constants";
 
 import { Button, Input } from '../../core/components';
 
@@ -35,7 +35,8 @@ export const DonationModule: FC = () => {
 
       if (isSuccess) {
          setNewDonation(DonationInitialValues);
-         window.open(data?.data?.paymentURL as string, '_self');
+         console.log("🚀 ~ useEffect ~ data:", data);
+         window.open(data?.data?.url as string, '_self');
       }
    }, [isError, error, isSuccess, data, navigate]);
 
@@ -58,7 +59,8 @@ export const DonationModule: FC = () => {
       e.preventDefault();
       const donationDoc: IDonation = newDonation;
 
-      donationDoc.referenceId = programId || eventId || COMMON.EMPTY_STRING;
+      // donationDoc.referenceId = programId || eventId || COMMON.EMPTY_STRING;
+      donationDoc.userId = uuidv4();
       donationDoc.amount = Number(donationDoc.amount);
 
       try {
@@ -94,8 +96,8 @@ export const DonationModule: FC = () => {
                />
                <Input
                   type="text"
-                  name="custName"
-                  value={newDonation.custName}
+                  name="userName"
+                  value={newDonation.userName}
                   onChange={handleChange}
                   placeholder="Enter your full name"
                   disabled={isLoading}
