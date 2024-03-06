@@ -23,8 +23,9 @@ const DonationApi = createApi({
       CheckStatus: query<{ data: { status: string } }, { transactionId: string }>({
          query: ({ transactionId }) => {
             return {
-               url: `${API_ROUTES.CHECK_STATUS}/${transactionId}`,
-               method: API_METHODS.GET,
+               url: `${API_ROUTES.CHECK_STATUS}`,
+               method: API_METHODS.POST,
+               body: { transactionId },
             };
          },
       }),

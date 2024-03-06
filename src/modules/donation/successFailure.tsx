@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { useLazyCheckStatusQuery } from '../../core/services';
 
@@ -8,6 +8,7 @@ import { Loader } from '../../core/components';
 
 export const SuccessFailureModule: FC = () => {
    const { merchantTransactionId } = useParams();
+   const navigate = useNavigate();
    const [isPaymentSuccess, setIsPaymentSuccess] = useState(false);
 
    const [CheckStatus, { data, error, isError, isSuccess, isLoading }] = useLazyCheckStatusQuery();
@@ -21,26 +22,25 @@ export const SuccessFailureModule: FC = () => {
       if (isSuccess) {
          if (data?.data?.status === "SUCCESS") {
             setIsPaymentSuccess(true);
+            setTimeout(() => {
+               navigate("/", { replace: true });
+            }, 5000);
          }
+      } else {
+         setTimeout(() => {
+            navigate("/", { replace: true });
+         }, 5000);
       }
 
       (async () => {
          await CheckStatus({ transactionId: merchantTransactionId as string });
       })();
-   }, [merchantTransactionId, isSuccess, isError, error, data, CheckStatus, setIsPaymentSuccess]);
+   }, [merchantTransactionId, isSuccess, isError, error, data, CheckStatus, setIsPaymentSuccess, navigate]);
 
    if (isLoading) {
       return (
          <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <Loader />
-         </div>
-      );
-   }
-
-   if (merchantTransactionId) {
-      return (
-         <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="text-4xl font-bold text-slate-800 mb-6">Merchant Transaction ID:- <span className="text-slate-600">{merchantTransactionId}</span></div>
          </div>
       );
    }
