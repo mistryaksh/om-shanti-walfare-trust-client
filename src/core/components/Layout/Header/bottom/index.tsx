@@ -32,15 +32,15 @@ export const HeaderBottom: FC = () => {
                name: "Gallery",
                to: ROUTES.EVENTS,
           },
-          {
-               name: "Privacy Policy",
-               to: ROUTES.REFUND_POLICY,
-          },
+          // {
+          //      name: "Privacy Policy",
+          //      to: ROUTES.REFUND_POLICY,
+          // },
 
-          {
-               name: "Terms & Condition",
-               to: ROUTES.TERMS_CONDITION,
-          },
+          // {
+          //      name: "Terms & Condition",
+          //      to: ROUTES.TERMS_CONDITION,
+          // },
           // {
           //    name: "Blogs",
           //    to: ROUTES.BLOGS

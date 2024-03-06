@@ -50,7 +50,10 @@ export const FooterTop: FC = () => {
                     <h4 className="text-sm sm:text-lg font-medium text-white mb-3.5 sm:mb-6">Contact Info</h4>
                     <ul className="flex flex-col items-start gap-y-2.5 sm:gap-y-4 text-slate-500 text-xs sm:text-base font-light tracking-wide w-full">
                          <li>
-                              Address: 123, Lorem Ipsum, <br /> Dolor Sit Amet
+                              <address className="capitalize">
+                                   Address: OM SHANTI WELFARE TRUST, OFF. NO 607, KANAN APARTMENT,AMRUT NAGAR,
+                                   GHATKOPAR(WEST),MUMBAI, MH18,MH,400086
+                              </address>
                          </li>
                          <li>Phone: +91 99204 41626 / 93729 97878</li>
                          <li>Email: omshantiwelfaretrust@gmail.com</li>
