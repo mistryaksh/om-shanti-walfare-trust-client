@@ -7,4 +7,5 @@ export * from "./events/details";
 export * from "./blogs";
 export * from "./contact";
 export * from "./donation";
+export * from "./donation/successFailure";
 export * from "./others";

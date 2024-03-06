@@ -14,6 +14,9 @@ export enum ROUTES {
      DONATION = "/donation",
      TERMS_CONDITION = "/terms-and-conditions",
      REFUND_POLICY = "/refund-policy",
+     DONATION_STATUS = "/donation/status/:merchantTransactionId",
+     PAYMENT_SUCCESS = "/payment/success",
+     PAYMENT_FAILURE = "/payment/failure",
 }
 
 export enum API_ROUTES {
@@ -24,8 +27,9 @@ export enum API_ROUTES {
      PROGRAM = "/program/all",
      NEW_USER_CONTACT = "/user/new",
      NGO_PROFILE = "/ngo",
-     DONATIONS = "/donations",
+     DONATIONS = "/donation/pay",
      GALLERY = "/gallery",
+     CHECK_STATUS = "/donation/check-status",
 }
 
 export enum API_METHODS {

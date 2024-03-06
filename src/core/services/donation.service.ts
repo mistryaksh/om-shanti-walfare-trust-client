@@ -9,8 +9,8 @@ const DonationApi = createApi({
    baseQuery: UserReduxSetup,
    reducerPath: "donationApi",
    tagTypes: ["donationApi"],
-   endpoints: ({ mutation }) => ({
-      NewDonation: mutation<{ data: { paymentURL: string } }, IDonation>({
+   endpoints: ({ query, mutation }) => ({
+      NewDonation: mutation<{ data: { url: string } }, IDonation>({
          query: (donation) => {
             return {
                url: API_ROUTES.DONATIONS,
@@ -19,9 +19,18 @@ const DonationApi = createApi({
             };
          },
       }),
+
+      CheckStatus: query<{ data: { status: string } }, { transactionId: string }>({
+         query: ({ transactionId }) => {
+            return {
+               url: `${API_ROUTES.CHECK_STATUS}/${transactionId}`,
+               method: API_METHODS.GET,
+            };
+         },
+      }),
    }),
 });
 
 export const DonationApiReducer = DonationApi.reducer;
 export const DonationApiMiddleware = DonationApi.middleware;
-export const { useNewDonationMutation } = DonationApi;
+export const { useNewDonationMutation, useLazyCheckStatusQuery } = DonationApi;
