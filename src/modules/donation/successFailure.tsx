@@ -1,14 +1,15 @@
 import React, { FC, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { MdError, MdCheckCircle } from "react-icons/md";
 
 import { useLazyCheckStatusQuery } from '../../core/services';
 
-import { Loader } from '../../core/components';
+import { Loader, Button } from '../../core/components';
 
 
 export const SuccessFailureModule: FC = () => {
    const { merchantTransactionId } = useParams();
-   const navigate = useNavigate();
+   const navigate = useNavigate();   
    const [isPaymentSuccess, setIsPaymentSuccess] = useState(false);
 
    const [CheckStatus, { data, error, isError, isSuccess, isLoading }] = useLazyCheckStatusQuery();
@@ -26,10 +27,6 @@ export const SuccessFailureModule: FC = () => {
                navigate("/", { replace: true });
             }, 5000);
          }
-      } else {
-         setTimeout(() => {
-            navigate("/", { replace: true });
-         }, 5000);
       }
 
       (async () => {
@@ -58,13 +55,11 @@ export const SuccessFailureModule: FC = () => {
 
 function SuccessPage() {
    return (
-      <div className="bg-[#85D2EC] w-full overflow-hidden">
-         <div className="w-full overflow-hidden" style={{ background: 'url("https://static.vecteezy.com/system/resources/previews/015/876/098/original/success-payment-icon-in-flat-style-approved-money-illustration-on-isolated-background-successful-pay-sign-business-concept-vector.jpg") no-repeat fixed center', backgroundSize: 'contain' }}>
-            <div className="flex flex-col items-center justify-center p-6 mt-[78px] -ml-16 w-full h-screen bg-white/0 rounded-md shadow-md overflow-hidden">
-               <h2 className="text-2xl font-bold text-green-500 mb-6">Payment Successful</h2>
-               <p className="text-gray-500 text-sm">Thank you for your payment!</p>
-               {/* Add any animations or additional content for failure */}
-            </div>
+      <div className="bg-emerald-50 w-full h-screen overflow-hidden">
+         <div className="flex flex-col items-center justify-center h-screen w-full overflow-hidden">
+            <MdCheckCircle className="text-8xl sm:text-9xl text-emerald-500 mb-4 sm:mb-6 animate__animated animate__heartBeat" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-emerald-500 mb-2.5">Payment Successful</h2>
+            <p className="text-gray-500 text-sm sm:text-base mb-10 sm:mb-16">Thank you for your payment!</p>
          </div>
       </div>
    );
@@ -72,13 +67,12 @@ function SuccessPage() {
 
 function FailedPage() {
    return (
-      <div className="bg-[#85D2EC] w-full overflow-hidden">
-         <div className="w-full overflow-hidden" style={{ background: 'url("https://static.vecteezy.com/system/resources/previews/015/876/548/non_2x/fail-payment-icon-in-flat-style-declined-money-illustration-on-isolated-background-rejected-pay-sign-business-concept-vector.jpg") no-repeat fixed center', backgroundSize: 'contain' }}>
-            <div className="flex flex-col items-center justify-center p-6 mt-[90px] -ml-9 w-full h-screen bg-white/0 rounded-md overflow-hidden">
-               <h2 className="text-2xl font-bold text-red-500 mb-6">Payment Failed</h2>
-               <p className="text-gray-500 text-sm">Oops! Something went wrong with your payment.</p>
-               {/* Add any animations or additional content for failure */}   
-            </div>
+      <div className="relative bg-red-50 w-full h-screen overflow-hidden">
+         <div className="flex flex-col items-center justify-center h-screen m-auto w-full overflow-hidden">
+            <MdError className="text-8xl sm:text-9xl text-red-500 mb-4 sm:mb-6 animate__animated animate__heartBeat" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-red-500 mb-2.5">Payment Failed</h2>
+            <p className="text-gray-500 text-sm sm:text-base mb-10 sm:mb-16">Oops! Something went wrong with your payment.</p>
+            <Button value="Try again" onClick={() => window.history.back()} danger />
          </div>
       </div>
    );
