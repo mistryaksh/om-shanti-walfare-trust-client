@@ -16,13 +16,14 @@ type ButtonProps = {
    block?: boolean;
    sm?: boolean;
    disabled?: boolean;
+   danger?: boolean;
 }
 
-export const Button: FC<ButtonProps> = ({ children, value, type, className, onClick, transparent, styles, block, sm, disabled }): JSX.Element => {
+export const Button: FC<ButtonProps> = ({ children, value, type, className, onClick, transparent, styles, block, sm, disabled, danger}): JSX.Element => {
    return (
       <button
          type={type}
-         className={(className || (!transparent ? STYLES.BUTTON : STYLES.BUTTON_TRANSPARENT) + (sm ? ' px-6 py-3.5 text-sm' : ' px-10 py-5')) + COMMON.EMPTY_SPACE + styles + (block ? ' w-full' : ' w-auto')}
+         className={(className || (danger ? STYLES.BUTTON_DANGER : transparent ? STYLES.BUTTON_TRANSPARENT : STYLES.BUTTON) + (sm ? ' px-6 py-3.5 text-sm' : ' px-10 py-5')) + COMMON.EMPTY_SPACE + styles + (block ? ' w-full' : ' w-auto')}
          onClick={onClick}
          disabled={disabled}
       >

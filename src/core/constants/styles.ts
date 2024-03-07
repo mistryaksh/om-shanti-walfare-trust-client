@@ -8,6 +8,7 @@ export const LAYOUT_STYLES = {
 export const COMPONENT_STYLES = {
    BUTTON: 'bg-emerald-500 text-white text-md font-light tracking-wider focus:outline-none active:outline-none hover:bg-emerald-600 duration-300 ease-in-out',
    BUTTON_TRANSPARENT: 'bg-transparent text-emerald-500 px-12 py-5 text-md font-light tracking-wider focus:outline-none active:outline-none',
+   BUTTON_DANGER: 'bg-red-500 text-white px-12 py-5 text-md font-light tracking-wider focus:outline-none active:outline-none',
 };
 
 export const MISSION_CARD_STYLES = {
