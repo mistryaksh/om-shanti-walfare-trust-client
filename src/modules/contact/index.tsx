@@ -106,7 +106,8 @@ export const ContactModule: FC = () => {
                                         OM SHANTI WELFARE TRUST
                                    </h4>
                                    <p className="text-slate-500 text-sm sm:text-base font-light">
-                                        OFF. NO 607, KANAN APARTMENT,AMRUT NAGAR, GHATKOPAR(WEST),MUMBAI, MH18,MH,400086
+                                        OM SHANTI CLINIC, NEAR JANTA BAKERY,Road no. 03, ganga society, Vikhroli
+                                        parksite 400079
                                    </p>
                               </div>
                          </div>

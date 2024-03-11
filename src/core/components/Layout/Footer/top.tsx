@@ -51,8 +51,8 @@ export const FooterTop: FC = () => {
                     <ul className="flex flex-col items-start gap-y-2.5 sm:gap-y-4 text-slate-500 text-xs sm:text-base font-light tracking-wide w-full">
                          <li>
                               <address className="capitalize">
-                                   Address: OM SHANTI WELFARE TRUST, OFF. NO 607, KANAN APARTMENT,AMRUT NAGAR,
-                                   GHATKOPAR(WEST),MUMBAI, MH18,MH,400086
+                                   Address: OM SHANTI CLINIC, NEAR JANTA BAKERY,Road no. 03, ganga society, Vikhroli
+                                   parksite 400079
                               </address>
                          </li>
                          <li>Phone: +91 99204 41626 / 93729 97878</li>
