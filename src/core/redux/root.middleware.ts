@@ -3,16 +3,18 @@ import { Middleware } from "@reduxjs/toolkit";
 
 import {
    ContactApiMiddleware,
-   EventApiMiddleware,
+   GalleryApiMiddleware,
    EventCategotyApiMiddleware,
    ProgramApiMiddleware,
-   WebsiteApiMiddleware
+   WebsiteApiMiddleware,
+   DonationApiMiddleware
 } from "../services";
 
 export const rootMiddleware: Middleware[] = [
    ContactApiMiddleware,
-   EventApiMiddleware,
+   GalleryApiMiddleware,
    EventCategotyApiMiddleware,
    ProgramApiMiddleware,
-   WebsiteApiMiddleware
+   WebsiteApiMiddleware,
+   DonationApiMiddleware
 ];

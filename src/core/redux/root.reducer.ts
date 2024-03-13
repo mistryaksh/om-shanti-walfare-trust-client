@@ -2,16 +2,18 @@ import { combineReducers } from "@reduxjs/toolkit";
 
 import {
    ContactApiReducer,
-   EventApiReducer,
+   GalleryApiReducer,
    EventCategotyApiReducer,
    ProgramApiReducer,
-   WebsiteApiReducer
+   WebsiteApiReducer,
+   DonationApiReducer
 } from "../services";
 
 export const rootReducer = combineReducers({
    contactApi: ContactApiReducer,
-   eventApi: EventApiReducer,
+   galleryApi: GalleryApiReducer,
    eventCategoryApi: EventCategotyApiReducer,
    programApi: ProgramApiReducer,
    websiteApi: WebsiteApiReducer,
+   donationApi: DonationApiReducer
 });

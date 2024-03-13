@@ -10,12 +10,12 @@ const WebsiteApi = createApi({
    reducerPath: "websiteApi",
    tagTypes: ["websiteApi"],
    endpoints: ({ mutation, query }) => ({
-      NewUserContact: mutation<{ data: string }, { contact: IUserContact }>({
+      NewUserContact: mutation<{ data: string }, IUserContact>({
          query: (contact) => {
             return {
                url: API_ROUTES.NEW_USER_CONTACT,
                method: API_METHODS.POST,
-               body: contact,
+               body: { ...contact },
             };
          },
       }),

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["formik"],
     "target": "es5",
     "lib": [
       "dom",
