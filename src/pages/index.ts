@@ -9,3 +9,4 @@ export * from "./contact";
 export * from "./donation";
 export * from "./donation/successFailure";
 export * from "./others";
+export * from "./certificates";
